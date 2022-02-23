@@ -1,4 +1,4 @@
-# 100daySwift
+# 100 days of SwiftUI
 
 ## variables
 naming convention: camelCase
