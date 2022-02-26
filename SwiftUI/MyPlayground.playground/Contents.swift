@@ -1,9 +1,7 @@
-for i in 1...5 {
-    print("Counting from 1 through 5: \(i)")
+func printTimesTables(for: Int) {
+    for i in 1...12 {
+        print("\(i) x \(for) is \(i * for)")
+    }
 }
 
-print()
-
-for i in 1..<5 {
-    print("Counting 1 up to 5: \(i)")
-}
+printTimesTables(for: 5)
