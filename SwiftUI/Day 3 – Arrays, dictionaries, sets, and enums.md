@@ -28,7 +28,7 @@ albums.append("Red")
 ```
 
 ### array 선언법
-```Array<String> 대신 ```[String]``` 이라고도 쓸 수 있다.
+```Array<String>``` 대신 ```[String]``` 이라고도 쓸 수 있다.
 ```swift
 var albums = Array<String>()
 var albums = [String]()
