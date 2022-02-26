@@ -1,10 +1,3 @@
-enum Weekday {
-    case monday
-    case tuesday
-    case wednesday
-    case thursday
-    case friday
-}
-var day = Weekday.monday
-day = .tuesday
-day = .friday
+let names = [String]()
+let crewCount = names.isEmpty ? "No one" : "\(names.count) people"
+print(crewCount)
