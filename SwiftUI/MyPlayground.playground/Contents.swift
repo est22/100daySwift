@@ -1,20 +1,21 @@
-enum PasswordError: Error {
-    case short, obvious
-}
-func checkPassword(_ password: String) throws -> String {
-    if password.count < 5 {
-        throw PasswordError.short
+let team = ["Gloria", "Suzanne", "Piper", "Tiffany", "Tasha"]
+
+let sortedTeam = team.sorted()
+print(sortedTeam)
+
+func captainFirstSorted(name1: String, name2: String) -> Bool {
+    if name1 == "Suzanne" {
+        return true
+    } else if name2 == "Suzanne" {
+        return false
     }
 
-    if password == "12345" {
-        throw PasswordError.obvious
-    }
-
-    if password.count < 8 {
-        return "OK"
-    } else if password.count < 10 {
-        return "Good"
-    } else {
-        return "Excellent"
-    }
+    return name1 < name2
 }
+
+
+let captainFirstTeam = team.sorted(by: captainFirstSorted)
+print(captainFirstTeam)
+
+// ["Suzanne", "Gloria", "Piper", "Tasha", "Tiffany"]
+
