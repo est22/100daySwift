@@ -1,9 +1,13 @@
 .DS_Store
 *.playground
+<<<<<<< HEAD
 SwiftUI/MyPlayground.playground/Contents.swift
 SwiftUI/MyPlayground.playground/contents.xcplayground
 SwiftUI/MyPlayground.playground/timeline.xctimeline
 
+=======
+MyPlayground.playground/
+>>>>>>> cacf8d4 (modified .gitignore)
 
 
 
