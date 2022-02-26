@@ -1,7 +1,20 @@
-func printTimesTables(for: Int) {
-    for i in 1...12 {
-        print("\(i) x \(for) is \(i * for)")
+enum PasswordError: Error {
+    case short, obvious
+}
+func checkPassword(_ password: String) throws -> String {
+    if password.count < 5 {
+        throw PasswordError.short
+    }
+
+    if password == "12345" {
+        throw PasswordError.obvious
+    }
+
+    if password.count < 8 {
+        return "OK"
+    } else if password.count < 10 {
+        return "Good"
+    } else {
+        return "Excellent"
     }
 }
-
-printTimesTables(for: 5)
