@@ -1,21 +1,13 @@
-struct Student {
-    var name: String
-    var bestFriend: String
-
-    init(name: String, bestFriend: String) {
-        print("Enrolling \(name) in class…")
-        self.name = name
-        self.bestFriend = bestFriend
-    }
+struct AppData {
+    static let version = "1.3 beta 2"
+    static let saveFilename = "settings.json"
+    static let homeURL = "https://www.sdjfklds.com"
+    
 }
 
-struct Student {
-    var name: String
-    var bestFriend: String
-
-    init(name studentName: String, bestFriend studentBestFriend: String) {
-        print("Enrolling \(studentName) in class…")
-        name = studentName
-        bestFriend = studentBestFriend
-    }
+struct Employee {
+    let username: String
+    let password: String
+    
+    static let example = Employee(username: "sdfs", password: "sdfsdf")
 }

@@ -5,6 +5,15 @@
 struct는 이와 같이 생겼다.
 
 ```swift
+
+struct Book {
+    var title: String
+    var author = "Unknown"
+    var pageCount = 0
+}
+
+
+
 struct Album {
     let title: String
     let artist: String
