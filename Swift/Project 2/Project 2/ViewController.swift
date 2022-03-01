@@ -12,10 +12,13 @@ class ViewController: UIViewController {
     @IBOutlet var button1: UIButton!
     @IBOutlet var button2: UIButton!
     @IBOutlet var button3: UIButton!
+    @IBOutlet var scoreLabel: UILabel!
     
     var countries = [String]()
     var score = 0
     var correctAnswer = 0
+    var askedQuestions = 0
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +36,7 @@ class ViewController: UIViewController {
         button3.layer.borderColor = UIColor.lightGray.cgColor
 //        button3.layer.borderColor = UIColor(red: 1.0, green: 0.6, blue: 0.2, alpha: 1.0).cgColor
     
+//        scoreLabel.text = "Your score: \(score)"
         
         askQuestion()
  
@@ -56,14 +60,27 @@ class ViewController: UIViewController {
             title = "Correct"
             score += 1
         } else {
-            title = "Wrong"
+            title = "Wrong! That's the flag of \(countries[correctAnswer])."
             score -= 1
         }
+    
         
         let ac = UIAlertController(title: title, message: "Your score is \(score)", preferredStyle: .alert)
-        
         ac.addAction(UIAlertAction(title: "Continue", style: .default, handler: askQuestion))
-        
         present(ac, animated: true)
+        
+        scoreLabel.text = "Your score: \(score)"
+        
+        // when askedQuestions is 10, finish the game
+        askedQuestions += 1
+        let close = UIAlertAction(title: "Close", style: .destructive, handler: nil)
+        
+        if askedQuestions == 10 {
+            ac.title = "Game Finished"
+            ac.message = "Your total score is \(score)."
+            ac.addAction(close)
+            present(ac, animated: false)
+            
+        }
     }
 }
