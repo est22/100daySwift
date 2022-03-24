@@ -20,7 +20,6 @@ class ViewController: UITableViewController {
         if let url = URL(string: urlString) {
             // convert url -> data
             if let data = try? Data(contentsOf: url) {
-                // we're OK to parse (while downloading: app will lock up -> white screen)
                 parse(json: data)
             }
         }
@@ -50,6 +49,12 @@ class ViewController: UITableViewController {
         cell.textLabel?.text = petition.title
         cell.detailTextLabel?.text = petition.body
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = DetailViewController()
+        vc.detailItem = petitions[indexPath.row]
+        navigationController?.pushViewController(vc, animated: true)
     }
 
 
